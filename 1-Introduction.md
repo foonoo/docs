@@ -1,7 +1,7 @@
 # Introduction
-Foonoo is a static site generator that converts text files to websites. Like other static site systems, foonoo reads in structured text files in popular formats like Markdown or reStructured and converts them to HTML code that can be served directly from a web server that supports serving HTML files. 
+Another static site generator? Yes! Foonoo is a static site generator that converts text files to websites. It doesn't claim to be any special when compared to others, so don't use it if you're not required to. Regardless, like other static site generators, foonoo reads in structured text files in popular formats like Markdown or reStructured and converts them to HTML code that can be served directly from a web server that supports serving HTML files. 
 
-The name foonoo comes from the Fante (Akan) word for Oven. Just as an oven takes raw dough (or some other preparatory material) and permanently, as well as irreversably converts them into bread (or some other fantastic baked treat); foonoo takes in your plain text files and images, and converts them into beautiful websites.
+The name foonoo comes from the Fante (Akan) word for Oven. Just as an oven takes raw dough (or some other combination of preparatory materials) and permanently, as well as irreversibly converts them into bread (or some other fantastic baked treat); foonoo takes in your plain text files and images, and converts them into beautiful websites.
 
 ## Installing foonoo
 The best way to install foonoo is to grab the latest pre-built PHAR archive. Any computer system with a modern PHP interpreter should be able to run this PHAR archive, provided the required extensions are also installed. 
@@ -9,7 +9,13 @@ The best way to install foonoo is to grab the latest pre-built PHAR archive. Any
 Another alternative to installing from a PHAR archive will be to perform a composer install. This can be done globally, or in some cases locally to specific projects.
 
 ## Quickstart Tutorial
-Before we get into the details
+Before we get into the details of how foonoo works, though, let's go through a simple example. Of course this example requires that you have successfully installed foonoo, and you also have the ability to navigate the file system and terminals of your chosen platform. 
+
+First, create an empty directory (or folder) through the terminal. Then copy any markdown file you may have lying around into the folder as `index.md`. If you don't have a readily available markdown file you can copy the text below into a text file and name it as `index.md`.
+
+````
+# Hello World
+````  
 
 ## Foonoo Architecture
 
@@ -24,4 +30,6 @@ Although it's built in the spirit of other static generators, foonoo tries to di
 
 By default foonoo ships with four different builders: `plain`, `blog`, `docs`, and `wiki`.
 
-The plain builder provides no st
+The plain builder, which we already used in our earlier example, is loaded by default requires no file system structure. It simply works by converting all the files in the input directory into html files.
+
+Blog provides an extension over the plain builder which is useful for building blogs. Docs is well suited to books and documentation sites. And wiki works as a rendering engine for a git backed wiki.
