@@ -4,9 +4,18 @@ Another static site generator? Yes, foonoo is a static site generator that conve
 The name foonoo comes from the Fante (Akan) word for Oven. Just as an oven takes raw dough (or some other combination of preparatory materials) and permanently, as well as irreversibly converts them into bread (or some other fantastic baked treat); foonoo takes in your plain text files and images, and converts them into beautiful websites.
 
 ## Installing foonoo
-The best way to install foonoo is to grab the latest pre-built PHAR archive. Any computer system with a modern PHP interpreter should be able to run this PHAR archive, provided the required extensions are also installed. You can pick the most recent PHAR [here] (https://github.com/foonoo/foonoo/releases).
+The best way to install foonoo is to grab the latest pre-built PHAR archive. Any computer system with a modern PHP interpreter should be able to run this archive (provided the required extensions are also installed). You can download the most recent PHAR archive [here](https://github.com/foonoo/foonoo/releases).
 
-Another alternative to installing from a PHAR archive will be to perform a composer install. This can be done globally, or in some cases locally to specific projects.
+To execute a phar archived version of foonoo, you can call:
+
+	php /path/to/foonoo.phar
+
+Another alternative to installing from a PHAR archive will be to perform a composer install. This can be done globally, or in some cases locally to specific projects. To install globally:
+
+	composer global require foonoo/foonoo
+
+Once installed globally, foonoo can be executed from the `~/.config/composer/vendor/bin/foonoo` script. You can even call the `foonoo` script directly from your shell if you have `~/.config/composer/vendor/bin` in your `PATH`.
+
 
 ## Quickstart Tutorial
 Before we get into the details of how foonoo works, though, let's go through a simple example. Of course, this example requires that you have successfully installed foonoo, and you also have the ability to navigate the file system and terminals of your chosen platform. 
