@@ -16,19 +16,38 @@ Another alternative to installing from a PHAR archive will be to perform a compo
 
 Once installed globally, foonoo can be executed from the `~/.config/composer/vendor/bin/foonoo` script. You can even call the `foonoo` script directly from your shell if you have `~/.config/composer/vendor/bin` in your `PATH`.
 
+For the rest of this document, we can assume that you have an executable `foonoo` script (including renamed PHAR archives) accessible through your `PATH`.
+
 
 ## Quickstart Tutorial
-Before we get into the details of how foonoo works, though, let's go through a simple example. Of course, this example requires that you have successfully installed foonoo, and you also have the ability to navigate the file system and terminals of your chosen platform. 
+Before we get into the details of how foonoo works, let's go through a simple example. Of course, this example requires that you have successfully installed foonoo, and you also have the ability to navigate the file system and terminals of your chosen platform. 
 
 First, create an empty directory (or folder) through the terminal. Then copy any markdown file you may have lying around into the folder as `index.md`. If you don't have a readily available markdown file you can copy the text below into a text file and name it as `index.md`.
 
 ````
 # Hello World
+
+I've always wondered why the phrase, "Hello World", is typically used for the output of the quintessential first program in most introductory programming content. 
 ````  
+
+Once you have your `index.md` in place, you can switch your current directory to its (`index.md`) location and execute.
+
+	foonoo generate
+
+This should produce the following output:
+
+	Writing all outputs to "/home/janice/examples/output_site/"
+	
+	Generating default site from "/home/janice/examples/"
+	- Rendering content for /home/janice/examples/output_site/index.html 
+	- Writing content to /home/janice/examples/output_site/index.html 
+	Total build time: 0.24s
+
+
 
 ## Foonoo Architecture
 
-Although it's built in the spirit of other static generators, foonoo tries to differentiate itself by acting as a platform on which different site generators run. As such, at its core, foonoo is just a platform that coordinates the work of other smaller site generators. While these site generators are responsible for defining the structure of the websites and the type of content it can contain, foonoo provides these builders with the following:
+Although it's built in the spirit of other static generators, foonoo tries to differentiate itself by acting as a platform on which different site generators run. At its core, foonoo is just a platform that coordinates the work of other smaller site generators. While these site generators are responsible for defining the structure of the websites and the type of content it can contain, foonoo provides these builders with the following:
 
    - A common interface through which site builders can access content for their site. 
    - An ecosystem for shared plugins that extend the sites.
