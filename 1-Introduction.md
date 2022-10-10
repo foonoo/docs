@@ -34,16 +34,16 @@ Once you have your `index.md` in place, you can switch your current directory to
 
 	foonoo generate
 
-This should produce the following output:
+Assuming your file is stored in a location, `/path/to/example`, you should see the following output:
 
-	Writing all outputs to "/home/janice/examples/output_site/"
+	Writing all outputs to "/path/to/examples/output_site/"
 	
-	Generating default site from "/home/janice/examples/"
-	- Rendering content for /home/janice/examples/output_site/index.html 
-	- Writing content to /home/janice/examples/output_site/index.html 
+	Generating default site from "/path/to/examples/"
+	- Rendering content for /path/to/examples/output_site/index.html 
+	- Writing content to /path/to/examples/output_site/index.html 
 	Total build time: 0.24s
 
-
+And in your current directory you should have a `_foonoo` directory, which
 
 ## Foonoo Architecture
 
