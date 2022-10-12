@@ -43,14 +43,14 @@ Assuming your file is stored in a location, `/path/to/example`, you should see t
 	- Writing content to /path/to/examples/output_site/index.html 
 	Total build time: 0.24s
 
-And in your current directory you should have a `_foonoo` directory, which
+And in your current directory you should have a `_foonoo` directory, which should contain some foonoo specific data, and an `output_site` directory which contains---your output site.
 
-## Foonoo Architecture
+## Architecture Overview
 
-Although it's built in the spirit of other static generators, foonoo tries to differentiate itself by acting as a platform on which different site generators run. At its core, foonoo is just a platform that coordinates the work of other smaller site generators. While these site generators are responsible for defining the structure of the websites and the type of content it can contain, foonoo provides these builders with the following:
+Although foonoo is built in the spirit of other static generators, it tries to differentiate itself by acting as a platform on which different site generators run. At its core, foonoo is just a platform that coordinates the work of other smaller site generators. While these site generators are responsible for defining the structure of the websites and the type of content it can contain, foonoo provides these builders with the following:
 
    - A common interface through which site builders can access content for their site. 
-   - An ecosystem for shared plugins that extend the sites.
+   - An ecosystem for shared plugins and extensions.
    - A transparent and extensible markup conversion system, which provides conversions for different text formats. (Markdown, reStructured, etc.), 
    - A common theming and templating infrastructure. 
    - An assets and media management system. 
@@ -61,3 +61,5 @@ By default foonoo ships with four different builders: `plain`, `blog`, `docs`, a
 The plain builder, which we already used in our earlier example, is loaded by default requires no file system structure. It simply works by converting all the files in the input directory into html files.
 
 Blog provides an extension over the plain builder which is useful for building blogs. Docs is well suited to books and documentation sites. And wiki works as a rendering engine for a git backed wiki.
+
+Next we'll look at a more detailed blog example.
