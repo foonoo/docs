@@ -43,7 +43,7 @@ Assuming your file is stored in a location, `/path/to/example`, you should see t
 	- Writing content to /path/to/examples/output_site/index.html 
 	Total build time: 0.24s
 
-And in your current directory you should have a `_foonoo` directory, which should contain some foonoo specific data, and an `output_site` directory which contains---your output site.
+And in your current directory you should have a `_foonoo` directory, which should contain some foonoo specific data, and an `output_site` directory which contains your output site. Go ahead and open the `index.html` file located in the `output_site` directory to preview your site.
 
 ## Architecture Overview
 
