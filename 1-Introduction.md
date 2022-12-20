@@ -1,10 +1,13 @@
+---
+title: Introduction
+---
 # Introduction
 Another static site generator? Yes, foonoo is a static site generator that converts text files to websites. In fact, it doesn't claim to be any special when compared to others, so don't use it if you're not required to. Functionally, like other static site generators, foonoo reads in structured text files in popular formats like Markdown and converts them to HTML code that can be served directly from just about any web server. 
 
 The name foonoo comes from the Fante (Akan) word for Oven. Just as an oven takes raw dough (or some other combination of preparatory materials) and permanently, as well as irreversibly converts them into bread (or some other fantastic baked treat); foonoo takes in your plain text files and images, and converts them into beautiful websites.
 
 ## Installing foonoo
-The best way to install foonoo is to grab the latest pre-built PHAR archive. Any computer system with a modern PHP interpreter should be able to run this archive (provided the required extensions are also installed). You can download the most recent PHAR archive [here](https://github.com/foonoo/foonoo/releases).
+The best way to install foonoo is to grab the latest pre-built PHAR archive. Any computer system with a modern PHP interpreter should be able to run this archive, provided the all the required extensions are also installed. You can download the most recent PHAR archive [here](https://github.com/foonoo/foonoo/releases).
 
 To execute a phar archived version of foonoo, you can call:
 

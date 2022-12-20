@@ -37,19 +37,26 @@ And it should also create an `output_site` directory, which contains the HTML co
 
 This would a web server on [[http://localhost:7000]], through which you could access your blog.
 
+## Customizing Your Blog
+You may have noticed that foonoo selected a default blog title for you. To change this, open the generated `site.yml` file and modify the title to whatever you want. Remeber to keep your title in quotes and escape special characters in the configuration file appropriately.
+
 ## Writing Content
 Now that your blog's directory is setup, you can start adding content. For blogs, you must put periodic posts in the `posts` directory, and you must put fixed pages into the `pages` directory.
 
 ### Pages
-To demonstrate page creation, let's create a simple page to tell our visitors about our blog. To do this, just go into the `pages` directory and create a file named `about.md`. In this file we can put the following content:
+
+Let's create a simple about page to tell our visitors about our blog. To do this, just go into the `pages` directory and create a file named `about.md`. In this file we can put the following content:
 
 ````
 # About this Blog
 
-Hello everyone! Welcome to our lovely little blog. This is just an example to show how pages can be incorporated to foonoo blogs.
+Hello everyone! Welcome to our lovely little website. This is just an example to show how pages can be incorporated to foonoo blogs. 
+
+After this, we'll take a look at how to actually create blog pages!
 ````
 
-Now when we re-generate our blog, we should have an `about.html` file generated in our `output_site` directory.
+Now when we re-generate our blog, we should have an `about.html` file generated in our `output_site` directory. Notice that after adding this file and building the site again with `foonoo generate`, a menu bar with a link to the about page is added.
+
 
 ### Posts
 For posts, you can follow the same approach for pages (as described above) and create a post's file in the `posts` directory. This time, however, you have to name the file with the format `YYYY-MM-DD-post-id.md`. Here, the `YYYY` section corresponds to the year, the `MM` section corresponds to the month, the `DD` section corresponds to the day, and the `post-id` section can be a unique ID for the post (which will typically be the title of the post, containing only underscores and hyphens).
@@ -70,4 +77,5 @@ After this, when we regenerate the blog, we should have the welcome post listed.
 ~~Discuss how a completely different theme can be selected~~
 ### Setting up permalinks
 ~~Discuss how permalinks can be setup~~
+
 

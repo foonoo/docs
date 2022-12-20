@@ -1,0 +1,6 @@
+type: default
+enable-toc: True
+title: "Foonoo Documentation"
+index: Introduction
+plugins:
+    - contrib/highlight
