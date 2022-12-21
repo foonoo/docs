@@ -1,19 +1,21 @@
 # A simple Blog Example
-As a proper primer on how to use foonpp, let's work through a simple example of building a blog. Not only will this example be a good introduction, it's also meant to provide some information about the internal workings of foonoo. We also feel that a blogging example is a good start for anyone interested in foonoo. After all, static site generators have always been staple of the personal blogging community&mdash;and if you've read this far, you're may most likely interested in blogging with foonoo.
+For a proper primer on how to use foonoo, let's work through a simple blogging example. Not only is this example going to be a good introduction to foonoo, it's also going to provide some useful information about the internal workings of foonoo. Honestly, a blogging example is also a good start for anyone interested in working with foonoo. After all, static site generators have always been staple of the personal blogging community&mdash;and if you've read this far, you're may most likely interested in blogging with foonoo.
 
 ## Initializing a Blog Directory
-By default, blogs created with foonoo are processed by the `blog` generator. If we want to create a blog, the first step will be to initialize a directory with the file structure required by the `blog` generator. To do this, we can switch to an empty directory where we want our blog's sources to reside and execute the following command:
+As already stated, foonoo builds sites by relying on dedicated site generators. When it comes to blogs foonoo foonoo can rely on a built in `blog` generator. This generator reads input from a specially formatted source directory, and it writes its outputs as a static blog website.
+
+The first step in creating a blog is to initialize a directory with the `blog` generator’s required file structure. This can be done by switching to an empty directory where we want the blog's sources to reside and executing the following command:
 
 	foonoo create blog
 
-Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and four other directories: `assets`, `media`,  `posts`, and `pages`. 
+Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. 
 
-The `assets` directory and the `media` directory are required by the foonoo core; they are used to store site assets (like stylesheets and icons) and site media (like images and videos respectively). 
+As its name suggests, the `_foonoo` directory is required by the foonoo core; it is used internally by foonoo and it’s also where you can place your images, themes and other related assets. 
 
-The `posts` and `pages` directories, on the other hand, are required by the `blog` generator, and they're used to hold the raw text files for individual posts and stand alone pages respectively.
+The `posts` and `pages` directories, on the other hand, are required by the `blog` generator, and they're used to hold the raw text files for individual blog posts and any additional stand alone pages you may create, respectively.
 
 ## Testing your blog
-With the initial directory structure in place, we can generate the HTML code for our first blog by executing the following code in our blog directory:
+With the initial directory structure in place after the `create` command, we can generate the HTML code for our first blog by executing the following code in our blog directory:
 
 	foonoo generate
 
