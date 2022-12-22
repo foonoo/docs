@@ -19,25 +19,22 @@ With the initial directory structure in place after the `create` command, we can
 
 	foonoo generate
 
-This command should produce the following output on the console:
+This command should produce a output to the terminal, similar to what is below:
 
 ````
-Found 1 site in "/home/ekow/examples/blog/"
-Writing all outputs to "/home/ekow/examples/blog/output_site/"
+Found 1 site in "/home/ekow/blog/"
+Writing all outputs to "/home/ekow/blog/output_site/"
 
-Generating blog site from "/home/ekow/examples/blog/"
-- Rendering content for /home/ekow/examples/blog/output_site/index.html 
-- Rendering content for /home/ekow/examples/blog/output_site/posts.html 
-- Writing content to /home/ekow/examples/blog/output_site/index.html 
-- Writing content to /home/ekow/examples/blog/output_site/posts.html 
-Total build time: 0.10s
+Generating blog site from "/home/ekow/blog/"
+- Rendering content for /home/ekow/blog/output_site/index.html 
+- Rendering content for /home/ekow/blog/output_site/posts.html 
+- Writing content to /home/ekow/blog/output_site/index.html 
+- Writing content to /home/ekow/blog/output_site/posts.html 
+- Copying images from /home/ekow/blog/_foonoo/images to /home/ekow/blog/output_site/images
+Total build time: 0.13s
 ````
 
-And it should also create an `output_site` directory, which contains the HTML code for your blog site. At this point, you could open the `output_site` directory and manually view the `index.html` file, or you could additionally execute:
-
-	foonoo serve
-
-This would a web server on [[http://localhost:7000]], through which you could access your blog.
+Most importantly, foonoo should also create an `output_site` directory containing the HTML code for your blog site. At this point, you can open the `output_site` directory and manually view the `index.html` file, or you can additionally execute `foonoo serve` on the command line to start a web server on [[http://localhost:7000]], through which you could access your blog.
 
 ## Customizing Your Blog
 You may have noticed that foonoo selected a default blog title for you. To change this, open the generated `site.yml` file and modify the title to whatever you want. Remeber to keep your title in quotes and escape special characters in the configuration file appropriately.
