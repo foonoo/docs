@@ -1,25 +1,28 @@
+---
+title: A simple blog example
+---
 # A simple Blog Example
-For a proper primer on how to use foonoo, let's work through a simple blogging example. Not only is this example going to be a good introduction to foonoo, it's also going to provide some useful information about the internal workings of foonoo. Honestly, a blogging example is also a good start for anyone interested in working with foonoo. After all, static site generators have always been staple of the personal blogging community&mdash;and if you've read this far, you're may most likely interested in blogging with foonoo.
+For a primer on how to use foonoo, let's work through a simple blogging example. In addition to being an introduction, this tutorial will also going to provide some useful information about the internal workings of foonoo. 
+
+It is worth noting that a blogging example is also a good start for anyone interested in working with foonoo. After all, static site generators have always been staple of the personal blogging community&mdash;and if you've read this far, you're most likely interested in blogging with foonoo.
 
 ## Initializing a Blog Directory
-As already stated, foonoo builds sites by relying on dedicated site generators. When it comes to blogs, foonoo can rely on a built in `blog` generator. This generator reads input from a specially formatted source directory, and it writes its outputs as a static blog website.
+As already stated, foonoo builds sites by relying on dedicated site generators. When it comes to blogs, foonoo can rely on a built in `blog` generator. This generator reads its input from a specially formatted source directory and writes its outputs as a static blog website.
 
-The first step in creating a blog is to initialize a directory with the `blog` generator’s required file structure. This can be done by switching to an empty directory where we want the blog's sources to reside and executing the following command:
+The requirement of a special source directory means the first step in creating a blog is to initialize a "source" directory with the required file structure. To do this, switch to an empty directory and execute:
 
 	foonoo create blog
 
 Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. 
 
-As its name suggests, the `_foonoo` directory is required by the foonoo core; it is used internally by foonoo and it’s also where you can place your images, themes and other related assets. 
+As its name suggests, the `_foonoo` directory is required by the foonoo core; it is used internally by foonoo and every foonoo site will have one. Generally, it contains site meta-data, cached information, and it’s also where you can put your images, themes and other related assets. 
 
-The `posts` and `pages` directories, on the other hand, are required by the `blog` generator, and they're used to hold the raw text files for individual blog posts and any additional stand alone pages you may create, respectively.
+The `posts` and `pages` directories, on the other hand, are required for the `blog` generator. Those directories are used to hold the raw text files for individual blog posts and any additional stand alone pages you may create.
 
 ## Testing your blog
-With the initial directory structure in place after the execution of the `create` command, we can generate the HTML code for our first blog by executing the following code in our blog directory:
+With the initial directory structure in place, we can generate the HTML code for our first blog by executing `foonoo generate`	in the blog directory.
 
-	foonoo generate
-
-This command should produce a output to the terminal, similar to what is below:
+This command should create an `output_site` directory containing the HTML code for your blog site. If successful, it should produce output similar to what is below:
 
 ````
 Found 1 site in "/home/ekow/blog/"
@@ -34,7 +37,7 @@ Generating blog site from "/home/ekow/blog/"
 Total build time: 0.13s
 ````
 
-Most importantly, foonoo should also create an `output_site` directory containing the HTML code for your blog site. At this point, you can open the `output_site` directory and manually view the `index.html` file, or you can additionally execute `foonoo serve` on the command line to start a web server on [[http://localhost:7000]], through which you could access your blog.
+At this point, you can open the `output_site` directory and manually view the `index.html` file, or you can additionally execute `foonoo serve` on the command line to start a web server on [[http://localhost:7000]], through which you could access your blog.
 
 ## Customizing Your Blog
 You may have noticed that your blog currently has a default foonoo title. To change this, open the generated `site.yml` file and modify the title to whatever you want. For the purposes of this tutorial, we can choose a title "My First Foonoo Blog." When it comes to changing your title, remeber to keep your title text in quotes and escape any special characters in the configuration file appropriately (as per the requirements of the YAML standards).
@@ -48,7 +51,8 @@ Let's start with adding pages to out blog. Assuming we wanted to create an "Abou
 ````
 # About this Blog
 
-Hello everyone! Welcome to our lovely little website. This is just an example to show how pages can be incorporated to foonoo blogs. 
+Hello everyone! Welcome to our lovely little website. This is just an 
+example to show how pages can be incorporated to foonoo blogs. 
 
 ````
 
@@ -66,7 +70,9 @@ title: Welcome To My Blog
 ---
 
 # Welcome!
-Welcome to my little blog. If you are seeing this post, then my installation of foonoo was succesful. Hopefully, we can progress to learn more about how foonoo works.
+Welcome to my little blog. If you are seeing this post, then my 
+installation of foonoo was succesful. Hopefully, we can progress to 
+learn more about how foonoo works.
 
 ````
 
