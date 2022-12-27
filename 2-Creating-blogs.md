@@ -56,23 +56,20 @@ After this page is added, we should have an `about.html` file generated in our `
 
 
 ### Posts
-For posts, you can follow the same approach for pages (as described above) and create a post's file in the `posts` directory. This time, however, you have to name the file with the format `YYYY-MM-DD-post-id.md`. Here, the `YYYY` section corresponds to the year, the `MM` section corresponds to the month, the `DD` section corresponds to the day, and the `post-id` section can be a unique ID for the post (which will typically be the title of the post, containing only underscores and hyphens).
+For posts, we can follow the same approach used with pages, as described above. This time however, instead of the `pages` directory, we will place posts in the `posts` directory. Also, post files must have a name that conforms with the format `YYYY-MM-DD-post-id.md`. Here, `YYYY` corresponds to the year,  `MM` corresponds to the month, `DD` corresponds to the day, and the `post-id` can be a unique ID for the post (typically the title of the post, containing only underscores and hyphens).
 
-In our running example, we can create a simple welcome post for our blog. We can title this file as `2022-12-07-welcome-to-my-blog.md` and place it in the `posts` directory. We can put to following in the contents of the post:
+To illustrate this, let's create a simple welcome post for our blog. We can name this file as `2022-12-07-welcome-to-my-blog.md` and place it in the `posts` directory. The content of this file could look something as shown below:
+
+````
+---
+title: Welcome To My Blog
+---
+
+# Welcome!
+Welcome to my little blog. If you are seeing this post, then my installation of foonoo was succesful. Hopefully, we can progress to learn more about how foonoo works.
 
 ````
 
-````
-
-After this, when we regenerate the blog, we should have the welcome post listed.
-
-## Customizing our blog
-~~Talk about the types of customizations that can be performed. Start with information on how the blog's name and author information can be changed.~~
-### Changing theme colors
-~~Discuss how config files can be used to change theme parameters~~
-### Switching themes
-~~Discuss how a completely different theme can be selected~~
-### Setting up permalinks
-~~Discuss how permalinks can be setup~~
-
+# Next steps
+This short example is meant to provide a feel of how foonoo could be used. In the next sections we will look at the specific way in which content can be written for foonoo, and we will further look at the different site generators&mdash;including the blog generator&mdash;in more detail.
 
