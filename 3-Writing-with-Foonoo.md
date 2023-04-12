@@ -40,9 +40,10 @@ This is supposed to be rendered as a warning with some fancy icons and text.
 The following are the tags currently built into foonoo.
 
 ### Link Tag
+The link tag is the simplest of the foonoo tags. It allows you to link out to external pages. You can consider it as an alternative to Markdown's internal link tag. To use this tag, place your link between the pairs of square brackets. For example, to link to wikipedia, you can use: `[[https://wikipedia.com]]`
 
 ### Foonoo Page Link Tag
-The link tag is the simplest of the foonoo tags. It allows you to link to other pages within a site by just providing its title or id. You can use this tag by putting either the title of the page or a page's ID int
+It allows you to link to other pages within a site by just providing its title or id. You can use this tag by putting either the title of the page or a page's ID int
 
 For example to link to 
 
