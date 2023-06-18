@@ -35,8 +35,13 @@ This is supposed to be rendered as a warning with some fancy icons and text.
 \[[/block:warning]]
 ````
 
-## Built In Tags
-Currently, the foonoo ships with default tags for handling links, loading images and media, and generating navigational tools (like as Tables of Content). The following sections describe these.
+## Escaping Tags
+In the case where an underlying text processor may require the double square braket, or you want to have a double square braket in your work for some reason, you could escape a tag by prefixing it with a back slash like so, `\[[`. 
+
+It is also worth noting that the foonoo tag processor will regurgitate any tags it fails to properly interpret. This means most usecases for the square brakets other that the ones explicitly for foonoo may not need to be escaped.
+
+## Using Built In Tags
+Currently, the foonoo ships with default tags for handling links, loading images and media, and generating navigational tools (like as Tables of Content). It is worth noting that foonoo tags are extensible and it's possible for plugins to create their own tags, or even redifine the behaviour of inbuilt tags. The following sections describe the tags built into foonoo by default.
 
 ### Foonoo Link Tag
 The link tag is the simplest of the foonoo tags. It allows you to link to other pages within a site by just providing its title or id. You can use this tag by putting either the title a page in between a pair of double square brackets. 
@@ -92,6 +97,4 @@ Block tags allow  you to decorate blocks of text. You might want to mark somethi
 
 To open a block tag you use the `[[block:type]]` tag at the begining of the text you want, and to close you use `[[\block:type]]`. The `type` in the block can be anything you want, provided the right CSS styles are available. By default foonoo ships with styles for `note`, `warning`, `alert`, `info`, and `commandline`.
 
-When foonoo is outputing to HTML, tags are output as div
-
-## Escaping Tags
+When foonoo is outputting to HTML, block tags are output as div tags with special classes attached to reflect the value in `type`.

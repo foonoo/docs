@@ -1,5 +1,5 @@
 ---
-title: A simple blog example
+title: "Getting Started: A Simple Blog"
 ---
 # A simple Blog Example
 For a primer on how to use foonoo, let's work through a simple blogging example. In addition to being an introduction, this tutorial will also going to provide some useful information about the internal workings of foonoo. 
