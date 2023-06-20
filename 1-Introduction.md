@@ -65,7 +65,7 @@ The plain builder, which we already used in our earlier example, is loaded by de
 
 Blog provides an extension over the plain builder which is useful for building blogs. Docs is well suited to books and documentation sites. And wiki works as a rendering engine that could possibly be used for a git backed wiki.
 
-## Directory Structure and Nesting
+## Directory Structure and Site Nesting
 Because of this site agnostic nature of foonoo, there really isn't a set directory structure. Except every site must have a `site.yaml` file in its base to hold information about the site, and a `_foonoo` directory to store other shared site resources like images, themes, plugins, and the like.
 
 Another interesting feature foonoo has is its ability to support nested sites. For example, you could have a personal site directory in which you can hold a blog site in its own sub directory (with its own complete independent site) and maybe a projects site also with its own sub directory (and also with its own complete site.)
