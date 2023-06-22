@@ -97,4 +97,4 @@ Block tags allow  you to decorate blocks of text. You might want to mark somethi
 
 To open a block tag you use the `[[block:type]]` tag at the begining of the text you want, and to close you use `[[\block:type]]`. The `type` in the block can be anything you want, provided the right CSS styles are available. By default foonoo ships with styles for `note`, `warning`, `alert`, `info`, and `commandline`.
 
-When foonoo is outputting to HTML, block tags are output as div tags with special classes attached to reflect the value in `type`.
+When foonoo is outputting to HTML, block tags are output as HTML div tags with special classes attached to reflect the value in `type`. Depending on the associated styles, this gives particluar blocks of texts distinct styling characteristics (like warnings, special information, and command line sections).
