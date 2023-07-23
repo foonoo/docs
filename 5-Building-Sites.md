@@ -58,8 +58,34 @@ And this should now be properly rendered as:
 
 We just overrode the layout! The default site builder has several other templates we can override. Heck, we can also define our own templates to be used within our overridden template. 
 
+
 ## Rendering YML Data
-Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, a list of projects on your home page, or entries for a recipe database. Regardless of your needs, Foonoo provides infrastructure for authors to inject, render, and style structured YML or JSON data. This is a great way to insert custom data into pages.
+Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, you could add an easy to manage list of projects on your home page, or it could also be entries for your recipe database. Regardless of your needs, Foonoo provides infrastructure for authors to inject, render, and style structured YML or JSON data for your site. 
+
+Data to be rendered must be YAML or JSON formatted files placed in the `__foonoo/data` directory. The file's name should only alpha-numeric characters (preferable lower-case) and nothing else.
+
+For example, if we wanted to add a list of projects to a site, we could start with the template to render this data. This template could just be put directly into the site directory and when rendered a page, with the same name as the template, will be generated. In our case, since we are creating a page to list projects, we could name this template page `projects.mustache`—explicitly implying we'll be using the mustache templating system.
+
+We could put the following code into our `projects.mustache` file:
+
+````html
+<h1>Projects</h1>
+
+{{#projects}}
+	<h2>{{name}}</h2>
+	<p>{{description}}</p>
+{{/projects}}
+````
+
+Or if we wanted to use good old PHP, we could put the following:
+
+````php
+<h1>Projects</h1>
+<?php foreach($projects as $project): ?>
+    <h2><?= $project["name"] ?></h2>
+    <p><?= $project["description"] ?></p>
+<?php endforeach; ?>
+````
 
 ## Adding Menus
 
