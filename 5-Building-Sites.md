@@ -64,9 +64,9 @@ Although you're building static sites, sometimes you may have the need to inject
 
 Data to be rendered must be YAML or JSON formatted files placed in the `__foonoo/data` directory. The file's name should only alpha-numeric characters (preferable lower-case) and nothing else.
 
-For example, if we wanted to add a list of projects to a site, we could start with the template to render this data. This template could just be put directly into the site directory and when rendered a page, with the same name as the template, will be generated. In our case, since we are creating a page to list projects, we could name this template page `projects.mustache`—explicitly implying we'll be using the mustache templating system.
+For example, if we wanted to add a list of projects to a site, we could start with the template to render this data. This template could just be put directly into the site directory and when rendered a page, with the same name as the template, will be generated. In our case, since we are creating a page to list projects, we could name this template page `my_projects.mustache`—explicitly implying we'll be using the mustache templating system.
 
-We could put the following code into our `projects.mustache` file:
+We could put the following code into our `my_projects.mustache` file:
 
 ````html
 <h1>Projects</h1>
@@ -86,6 +86,10 @@ Or if we wanted to use good old PHP, we could put the following:
     <p><?= $project["description"] ?></p>
 <?php endforeach; ?>
 ````
+
+and save this file as `my_projects.tplphp`.
+
+With these in place, you can create your data file as
 
 ## Adding Menus
 
