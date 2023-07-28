@@ -1,8 +1,8 @@
 # Building Sites
 
-We've already established foonoo's multi-site generator architecture, and we've also looked at how it ships with a default site generator. In this chapter, we'll go into details about how sites can be built with the default site generator. By the end of this section, you should be able to build simple sites, like a personal home page, or complex ones, like the one serving this documentation.
+We've already established Foonoo's multi-site generator architecture, and we've also briefly looked at how it ships with a default site generator. In this chapter, we'll go into details about how sites can be built with the default site generator. By the end of this section, you should be able to build simple sites, like a personal home page, or complex ones, like the one serving this documentation.
 
-Foonoo's default site generator provides a unique way of combining templates and text files—and even data in some cases—to generate sites. For most parts, the default site generator is heavily dependent on the themes that style the site's output to provide a lot of the features that tie sites together. In this section, we will take a look at how the default site generator can be used, and we will look at how the default theme that ships with foonoo allows us to build even more complex sites.
+Foonoo's default site generator provides a unique way of combining templates, text files, and even data in some cases to generate sites. For most parts, the default site generator is heavily dependent on the themes that style the site's output to provide a lot of the features that tie sites together. In this section, we will take a look at how the default site generator can be used, and we will look at how the default theme that ships with foonoo allows us to build even more complex sites.
 
 ## The Default Generator and Theming
 Sites in foonoo always have themes enabled when being generated. When simply rendering text files, the default site generator and its default theme are used. The default theme that ships with foonoo's default site generator is highly configurable. But you don't have to stick with it; you always have the opportunity to use your own themes.
@@ -59,7 +59,7 @@ And this should now be properly rendered as:
 We just overrode the layout! The default site builder has several other templates we can override. Heck, we can also define our own templates to be used within our overridden template. 
 
 
-## Rendering YML Data
+## Rendering Custom Data
 Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, you could add an easy to manage list of projects on your home page, or it could also be entries for your recipe database. Regardless of your needs, Foonoo provides infrastructure for authors to inject, render, and style structured YML or JSON data for your site. 
 
 Data to be rendered must be YAML or JSON formatted files placed in the `__foonoo/data` directory. The file's name should only alpha-numeric characters (preferable lower-case) and nothing else.
@@ -89,9 +89,39 @@ Or if we wanted to use good old PHP, we could put the following:
 
 and save this file as `my_projects.tplphp`.
 
-With these in place, you can create your data file as
+With these in place, you can create your `_foonoo/data/projects.yml` data file as follows:
+
+````yaml
+- name: Foonoo
+  description: A tool for building static websites.
+- name: Ntentan
+  description: A manifestation of the sunken cost fallacy.
+- name: Ananse Basic
+  description: A programming language that lives in a deluded person's mind.
+````
+
+Or if you prefer JSON as your data format, you could go with the a `_foonoo/data/projects.json` as follows:
+
+````JSON
+[
+    {
+        "name": "Foonoo", 
+        "description": "A tool for building static websites."
+    },
+    {
+        "name": "Ntentan", 
+        "description": "A manifestation of the sunken cost fallacy."
+    },
+    {
+        "name": "Ananse Basic", 
+        "description": "A programming language that lives in a deluded person's mind."
+    }
+]
+
+````
 
 ## Adding Menus
+
 
 ## Adding Content Navigation
 
