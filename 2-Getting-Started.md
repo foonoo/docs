@@ -64,7 +64,7 @@ For posts, we can follow the same approach used with pages, as described above. 
 
 To illustrate this, let's create a simple welcome post for our blog. We can name this file as `2022-12-07-welcome-to-my-blog.md` and place it in the `posts` directory. The content of this file could look something as shown below:
 
-````
+```Markdown
 ---
 title: Welcome To My Blog
 ---
@@ -74,7 +74,7 @@ Welcome to my little blog. If you are seeing this post, then my
 installation of foonoo was succesful. Hopefully, we can progress to 
 learn more about how foonoo works.
 
-````
+```
 
 # Next steps
 This short example is meant to provide a feel of how foonoo could be used. In the next sections we will look at the specific way in which content can be written for foonoo, and we will further look at the different site generators&mdash;including the blog generator&mdash;in more detail.
