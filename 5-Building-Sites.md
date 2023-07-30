@@ -122,7 +122,7 @@ Or if you prefer JSON as your data format, you could go with the a `_foonoo/data
 
 ````
 
-Once these are in place, generating your site should yield a `my_projects.html` file that looks like below.
+Once these are in place, generating your site should produce a `my_projects.html` file that looks like below.
 
 
 
