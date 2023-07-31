@@ -77,5 +77,5 @@ learn more about how foonoo works.
 ```
 
 # Next steps
-This short example is meant to provide a feel of how foonoo could be used. In the next sections we will look at the specific way in which content can be written for foonoo, and we will further look at the different site generators&mdash;including the blog generator&mdash;in more detail.
+This short example was meant to provide a feel of how foonoo could be used. In the next sections we will look at the specific way in which content can be written for foonoo, and we will further look at the different site generators&mdash;including the blog generator&mdash;in more detail.
 

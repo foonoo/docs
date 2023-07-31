@@ -4,3 +4,13 @@ title: "Foonoo Documentation"
 index: Introduction
 plugins:
     - contrib/highlight
+menu:
+  - title: Documentation
+    url: ./docs/
+  - title: Github
+    url: https://github.com/foonoo
+
+theme:
+    name: site
+    primary-color: "#264653"
+    secondary-color: "#960200"
