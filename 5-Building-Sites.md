@@ -130,6 +130,22 @@ menu:
 enable-toc: True
 ```
 
+Generating your site with this new configuration should now produce the following site:
+
+[[Our running examples with the table of contents|toc_sample.png|frame="figure"]]
+
+As you may have noticed, the table is generated in alphabetical order. In our running example, `Description.md` is placed above `Introuduction.md`, turning the sequence of content upside down. To help in presenting the table in an order that is relevant to your content, Foonoo provides two primary approaches.
+
+First, you could provide a `toc-weight` in the front-matter of your content to alter their position on the table of contents. All content have a default `toc-weight` of 0, and when the table of contents is generated, they are sorted in decreasing order of this `toc-weight`. This means if you increase the `toc-weight`, content moves up the table, and if you decrease it, content moves down. 
+
+Second, you could provide your table of contents explicitly in the `site.yml`.
+
+A third approach of altering the table exists that comes handy when you want to completely exclude a piece of content. To exclude content you could either add a `toc-skip` value to the front-matter, or you could also explicitly specify skipped content in the `site.yml` file.
+
+### Grouping Content
+Sometimes you may want to group items on the tab
+
+
 ## Rendering Custom Data
 Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, you may want to add an easy to manage list of your projects to your personal home page, or you want to showcase your ever-growing recipe database. Regardless of your needs, Foonoo provides the infrastructure for you to inject, render, and style structured YML or JSON data for your site. 
 
