@@ -1,3 +1,6 @@
+---
+title: Building Sites
+---
 # Building Sites
 
 We've already established Foonoo's multi-site generator architecture, and we've also briefly looked at how it ships with a default site generator. In this chapter, we'll go into the details of how sites can be built with this default site generator. By the end of this chapter you should be able to build simple sites, like a personal home page, or complex ones, like the one serving this documentation.
@@ -134,28 +137,61 @@ Generating your site with this new configuration should now produce the followin
 
 [[Our running examples with the table of contents|toc_sample.png|frame="figure"]]
 
-As you may have noticed, the table is generated in alphabetical order. In our running example, `Description.md` is placed above `Introuduction.md`, turning the sequence of content upside down. To help in presenting the table in an order that is relevant to your content, Foonoo provides two primary approaches.
+As you may have noticed, the table appears to be generated in alphabetical order. This is, however, not the case. In fact, it is dependent on how the underlying operating system presents the list of files. In our running example, `Description.md` is placed above `Introuduction.md`, because that's the order in which they were read into PHP. To help in presenting the table in an order that is relevant to your content, Foonoo provides two primary approaches.
 
-First, you could provide a `toc-weight` in the front-matter of your content to alter their position on the table of contents. All content have a default `toc-weight` of 0, and when the table of contents is generated, they are sorted in decreasing order of this `toc-weight`. This means if you increase the `toc-weight`, content moves up the table, and if you decrease it, content moves down. 
+First, you could provide a `toc-weight` value in the front-matter of your content. This weight alters the content's position on the table. All content have a default `toc-weight` of 0, and when the table of contents is generated, they are sorted in decreasing order of this `toc-weight`. This means if you increase the `toc-weight`, content moves up the table, and if you decrease it, content moves down. 
 
-Second, you could provide your table of contents explicitly in the `site.yml`.
+In the case of our running example, to place the Introduction page above Description, you could give it a weight of 10. This would bump it up in the table to make it preceed the Description. Choosing a figure like 10, and not 1, makes it easy to add in other numbers inbetween. If you prefer to, you could also use fractional numbers.
 
-A third approach of altering the table exists that comes handy when you want to completely exclude a piece of content. To exclude content you could either add a `toc-skip` value to the front-matter, or you could also explicitly specify skipped content in the `site.yml` file.
+With the second approach, you have to explicitly provide your table of contents through the `site.yml` file. For our running example this could be achieved with the following.
 
-### Grouping Content
-Sometimes you may want to group items on the tab
+```yml
+type: default
+title: "The Latin Placeholder Site"
+index: Introduction.md
+
+menu:
+  - title: Introduction
+    url: Introduction.html
+  - title: Foonoo
+    url: https://github.com/foonoo
+
+enable-toc: True
+
+toc:
+  - Introduction
+  - Description
+```
+Explicitly defining the table of contents has the added benefit of filtering out unwatned content, although specific items can also be removed from the automatically generated TOC by placing a `toc-skip: True` pair in the frontmatter.
+
+### Setting Colors
+One final party trick Ashes holds up its sleeves is the ability to have you choose your own colors. As usual, we need to update the `site.yml` file to make this happen. This time, however, we have to explicitly tell Foonoo to use the ashes theme before we can access this configuration. As such, we need to add a `theme` section as shown below:
+
+```yml
+theme:
+    name: ashes
+    primary-color: "#ff0000"
+    secondary-color: "#00ff00"  
+```
+
+The theme section allows you to define the name of a theme along with any theme specific configuration values. In this case we are setting the primary and secondary color of the ashes theme. These colors are used by ashes to set a general tone and may not be explicitly used.
+
+[[Switching the ashes colors for our site's theme.|ashes_colors.png|frame="figure"]]
+
 
 
 ## Rendering Custom Data
 Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, you may want to add an easy to manage list of your projects to your personal home page, or you want to showcase your ever-growing recipe database. Regardless of your needs, Foonoo provides the infrastructure for you to inject, render, and style structured YML or JSON data for your site. 
 
-Data to be rendered must be YAML or JSON formatted files placed in the `__foonoo/data` directory. The file's name should only alpha-numeric characters (preferable lower-case) and nothing else.
+Data to be rendered must be YAML or JSON formatted files placed in the `__foonoo/data` directory. The file's name should only alpha-numeric characters (preferable lower-case) and nothing else. 
 
-For example, if you wanted to add a list of projects to a site, you could start with by defining the template for rendering this data. This template could just be put directly into the site directory where other content reside. Whenever the site is rendered, a page with the same name as the template will be generated. 
+[[block:note]]
+Unlike other features described in this section, rendering custom data does not require the Ashes theme. It's a feature internal to Foonoo and can always be used regardless of active theme.
+[[/block:note]]
 
-In the case of this example, since you are creating a page to list projects, you could name this template page `my_projects.mustache`—explicitly implying you'll be using the mustache templating system.
+For example, if you wanted to add a list of projects to our running example site, you could start with by defining the template for rendering this data. This template must be in HTML and not Markdown (or similar structured text file). With this template in place, whenever the site is rendered, a page with the same name as the template will always be generated. 
 
-At this point, you can put the following code into the `my_projects.mustache` file:
+In the case of this example, since you are creating a page to list projects, you could name this template page `projects.mustache`—explicitly implying you'll be using the mustache templating system. Then you can put the following code into the `projects.mustache` file:
 
 ````html
 <h1>Projects</h1>
@@ -176,7 +212,7 @@ Or if you wanted to use good old PHP, you could go with the following:
 <?php endforeach; ?>
 ````
 
-and save this file as `my_projects.tplphp`.
+and save this file as `projects.tplphp`.
 
 With these in place, you can create your `_foonoo/data/projects.yml` data file as follows:
 
@@ -208,6 +244,6 @@ Or if you prefer JSON as your data format, you could go with the a `_foonoo/data
 ]
 ````
 
-Once these are in place, generating your site should produce a `my_projects.html` file that looks like below.
+Once these are in place, generating your site should produce a `projects.html` file that looks like below.
 
-[[The projects listing as rendered by foonoo | data_listing_screenshot.png | frame="figure"]]
+[[The projects listing as rendered by foonoo | projects_listing.png | frame="figure"]]
