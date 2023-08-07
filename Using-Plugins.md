@@ -1,3 +1,6 @@
+---
+title: Using Plugins
+---
 # Using Plugins
 
 Plugins provide a great way to extending Foonoo's, already fantastic 😉, features. By taking advantage of Foonoo's extensible architecture, you can build in features that you need for your own work.

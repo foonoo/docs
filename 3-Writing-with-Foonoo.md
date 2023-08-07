@@ -1,3 +1,6 @@
+---
+title: Writing with Foonoo
+---
 # Writing with Foonoo
 As already stated, foonoo generates content by converting text files (currently in Markdown) to your desired output (currently in HTML). However, before foonoo converts any text files, a pre-processor extracts foonoo specific tags and other front matter information for internal use.
 

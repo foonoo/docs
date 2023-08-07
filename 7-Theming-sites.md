@@ -1,3 +1,6 @@
+---
+title: Theming Sites
+---
 # Theming Sites
 
 ## Defining your own Templates

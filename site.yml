@@ -10,7 +10,8 @@ menu:
   - title: Github
     url: https://github.com/foonoo
 
-theme:
+theme: 
     name: site
-    primary-color: "#264653"
-    secondary-color: "#960200"
+    primary-color: "#4129b3"
+    secondary-color: "#ff4b4b"
+
