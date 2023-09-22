@@ -6,7 +6,9 @@ plugins:
     - contrib/highlight
 menu:
   - title: Documentation
-    url: ./docs/
+    url: .
+  - title: Plugins
+    url: ../plugins
   - title: Github
     url: https://github.com/foonoo
 
