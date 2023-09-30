@@ -4,6 +4,7 @@ title: "Foonoo Documentation"
 index: Introduction
 plugins:
     - contrib/highlight
+    - contrib/responsive_images
 menu:
   - title: Documentation
     url: .
