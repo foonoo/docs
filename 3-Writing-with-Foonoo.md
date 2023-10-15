@@ -4,9 +4,9 @@ title: Writing with Foonoo
 # Writing with Foonoo
 As already stated, foonoo generates content by converting text files (currently in Markdown) to your desired output (currently in HTML). However, before foonoo converts any text files, a pre-processor extracts foonoo specific tags and other front matter information for internal use.
 
-Front matter information allows you to include meta details about pages. With front matter data you can add attributes like,  titles, authors, unique ids, and you can also provide other site-generator specific information like the taxonomy of a blog post. Front matter must always be placed at the very beginning of the contents text. 
+Front matter information allows you to include meta details about pages. You can add attributes like,  titles, authors, unique ids, and you can also provide other site-generator specific information like the taxonomy of a blog post. Front matter must always be placed at the very beginning of the contents text. 
 
-Foonoo tags, on the other hand, are supplied inline with your content, and they make it easier for you to perform tasks, like linking between foonoo pages, embedding media into pages, or listing a table of contents. Additionally, third party plugins and extensions have the ability to introduce their own tags to enrich the writing process within foonoo.
+Foonoo tags, on the other hand, are supplied inline with your content. Their job is to make it easier for you to perform tasks, like linking between foonoo pages, embedding media into pages, or listing a table of contents. Additionally, third party plugins and extensions have the ability to introduce their own tags which enriches the writing process within foonoo.
 
 ## Frontmatter
 Whenever extra meta information about a page is to be supplied to foonoo, front matter formatted as YAML can be used. To distinguish and delimit the front matter data, the YAML code must be braced between two lines of three (or four) dashes, `---`. Also, it is required that the front matter information appears first before the page's content, if it is to be recognized.
