@@ -4,7 +4,7 @@ title: Theming Sites
 # Theming Sites
 1. Defining custom colors for the ashes theme.
 1. Defining templates to override sections of themes.
-1. Mention overriding the internal parser, too.
+	1. Mention overriding the internal parser, too.
 1. Defining your own themes.
 
 ## Defining your own Templates
