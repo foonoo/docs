@@ -12,12 +12,18 @@ Unlike plain foonoo sites, blogs require a directory structure, albeit a rather 
     foono blogs init
 
 ## Writing Content for Blogs
-All posts for blogs go directly into the `posts` directory. Post files are required to be named as follows `YYYY-MM-DD-Slug.ext`. Here the `YYYY` represents the year of the post, `MM` represents the time and `DD` represents the day. Similarly, the `.ext` represents the extension of the text markup in use. Currently this can only be `.md` (but there are plans to support `.html` and other text markup formats, but you can always add your own as we'd see later).
+All posts for blogs go directly into the `posts` directory. Post files are required to be named as follows `YYYY-MM-DD-Slug.ext`. Here the `YYYY` represents the year of the post, `MM` represents the time and `DD` represents the day. Similarly, the `.ext` represents the extension of the text markup in use. Currently, the extension can only be `.md` (but there are plans to support `.html` and other text markup formats, but you can always add your own as we'd see later).
 
 Content that go into the `pages` directory is treated similarly to content for plain sites. They are simple static pages that are not serialized as part of the blog content. You can use this to hold content like an about page, a list of projects, terms and conditions, and anything that isn't a blog post.
 
-### Blog post Specific Frontmatter
-Content for blogs are written in the same way as all other foonoo content (see [[Writing with Foonoo]]). However, there are a few requirements with front matter entries when blog posts are considered. Additionally, there are other blogging specific front matter entries that provide access to some of foonoo
+## Taxonomies
+Content for blogs are written similarly to all other foonoo content (see [[Writing with Foonoo]]). However, to help properly categorize blog content, foonoo provides a way to define dynamic front-matter tags. These tags, known as taxonomies, are used to define specific attributes you want posts in your blog to be categorized with.
+
+For example, if you wanted to categorize your posts by topics, authors, and tags, you could define three taxonomy tags for that. These tags, which you could define as `topic`, `author`, and `tags`, would be explicitly specified in the site's `site.yml` configuration file. Thus, if we continue with the earlier blog example from our [[Getting Started|Getting Started: A Simple Blog]] chapter, the `site.yml` file could look something like this.
+
+```yaml
+
+```
 
 
 1. The blog directory structure.
