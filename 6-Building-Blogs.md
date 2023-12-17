@@ -34,7 +34,7 @@ taxonomies: ['topic', 'author', 'tags']
 
 ```
 
-With these taxonomies in place, it is now possible to tag each post with these taxonomies in the front matter. So, for example, going back to the earlier blog example, we can modify our welcome post to be as follows.
+With these taxonomies placed in the `site.yml`, it is now possible to appropriately categorize each post through front matter entries. So, for example, going back to the earlier blog example, we can modify our welcome post to be as follows.
 
 
 ```Markdown
@@ -56,12 +56,8 @@ learn more about how foonoo works.
 
 ```
 
-Notice that the taxonomies are used directly in the frontmatter, and they could take data in whatever form 
+Notice how the taxonomies are used directly in the frontmatter, and also how taxonomies can take data in any type? Having the taxoniomies directly in the frontmatter makes it useful as metadata for the post. Anyone perusing the raw markdown files can get a sense of the post's calssification without digging any deeper. Also, by not restricting the data type on tag values, themes are able to use taxonomies anyhow they seem fit. It's just important to keep the values consistent across pages.
 
+## Archives
+The blog generator in foonoo automatically generates dated archive pages. This is done to ensure all paths in a post's URL resolve to some meaningful information. In this way, suppose we have a  page hosted at `/2022/02/13/a-sample-post.html`, and someone just visits `/2022/02/13`, the will receive a listing of all pages that were posted on that given date. Similarly, if you were to go a step lower and visit `2022/02`, you should receive a listing of all pages posted in February, and so on.
 
-1. The blog directory structure.
-1. Writing content for blogs.
-1. Blog specific front matter.
-1. Taxonmies.
-1. Archives
-1. Comments and feeds
