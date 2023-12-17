@@ -13,7 +13,18 @@ The requirement of a special source directory means the first step in creating a
 
 	foonoo create blog
 
-Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. 
+Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. The contents of the `site.yml` would be as follows:
+
+```yml
+# Default configuration 
+
+type: blog
+title: 'A foonoo blog site'
+description: 'This is a foonoo blog site.'
+# plugins:
+#   - contrib/highlight
+#   - contrib/responsive_images
+```
 
 As its name suggests, the `_foonoo` directory is required by the foonoo core; it is used internally by foonoo and every foonoo site will have one. Generally, it contains site meta-data, cached information, and it’s also where you can put your images, themes and other related assets. 
 
