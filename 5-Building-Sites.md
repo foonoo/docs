@@ -61,11 +61,42 @@ Habitant morbi tristique senectus et. Pellentesque habitant morbi tristique sene
 libero enim sed faucibus turpis in eu mi. Justo donec enim diam vulputate ut.
 ```
 
-Assuming we keep both of these files in the same directory and run foonoo's generate command:
+Assuming we keep both of these files in the same directory, as demonstrated by the tree below ...
+
+```
+ .
+├──  Description.md
+└──  Introduction.md
+```
+
+... and we run foonoo's generate command:
 
     foonoo generate
 
-the output should be an `output_site` directory containing the rendered site. The `output_site` directory will contain the output HTML files, `Introduction.html` and `Description.html`, as well as a `_foonoo` directory containing assets for the Ashes theme. These two files would be styled with the Ashes theme, and they should look as shown below.
+the output should be an `output_site` directory containing the rendered site. The `output_site` directory will contain the output HTML files, `Introduction.html` and `Description.html`, as well as a `_foonoo` directory meant to hold some foonoo specific files (in this case a cache). 
+
+The full directory tree should now be structured similar to the following:
+
+```
+ .
+├──  _foonoo
+│   └──  cache
+├──  Description.md
+├──  Introduction.md
+└──  output_site
+    ├──  assets
+    │   ├──  css
+    │   │   └──  bundle-default.css
+    │   ├──  images
+    │   │   ├──  foonoo-footer-dark.svg
+    │   │   └──  foonoo-footer.svg
+    │   └──  js
+    │       └──  bundle-default.js
+    ├──  Description.html
+    └──  Introduction.html
+```
+
+These two files would be styled with the Ashes theme, and they should look as shown below.
 
 [[The Introduction.md file as rendered into HTML|introduction_html.png| frame="figure"]]
 [[The Description.md file as rendered into HTML|description_html.png| frame="figure"]]

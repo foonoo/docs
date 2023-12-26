@@ -18,3 +18,11 @@ theme:
     primary-color: "#4129b3"
     secondary-color: "#c31010"
 
+assets:
+  files:
+    items:
+      - fonts/SauceCodeProNerdFont-Regular.ttf
+  css:
+    items:
+      - css/code.css
+
