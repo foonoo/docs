@@ -3,19 +3,19 @@ title: Building Sites
 ---
 # Building Sites
 
-We've already established Foonoo's multi-site generator architecture, and we've also briefly looked at how it ships with a default site generator. In this chapter, we'll go into the details of how sites can be built with this default site generator. By the end of this chapter you should be able to build simple sites, like a personal home page, or complex ones, like the one serving this documentation.
+We've already established Foonoo's multi-builder architecture, and we've also briefly looked at the built-in default site builder. In this chapter, we'll go into the details of how sites can be built with this default site builder. By the end of this chapter you should be able to build sites, like a personal home page, or the one serving this documentation.
 
-Foonoo's default site generator provides a unique way of combining templates, text files, and even data in some cases to generate sites. For most parts, the default generator depends heavily on its themes to provide most of the features needed to tie sites together, like menus. In this section, we will take a look at how the default site generator works, and we'll look at how the default theme that ships with Foonoo allows us to build complex sites.
+Foonoo's default site builder provides a unique way of combining templates, text files, and even data in some cases to generate sites. For most parts, the default builder depends heavily on its themes to provide most of the features needed to tie sites together, like navigation bars. In this section, we'll take a look at how the default site builder works, and we'll look at how the default theme that ships with Foonoo allows us to build complex sites.
 
 ## The Default Site Generator and Theming
-Sites in foonoo always have themes enabled when being generated. When you're simply rendering text files, the default site generator and its default theme are used. The default theme that ships with foonoo's default site generator is called Ashes. Ashes is highly configurable, and it allows you to significantly personalize sites to your taste. But you don't have to stick with Ashes; you always have the opportunity to use your own themes.
+Sites in foonoo always have themes enabled when being generated. When you're simply rendering text files, the default site generator and its default theme are used. The default theme that ships with foonoo's default site generator is called Ashes. Ashes is highly configurable, and it allows you to significantly personalize sites to your taste. But you don't have to stick with Ashes; you always have the opportunity to use other themes.
 
-When generating simple sites, where you're merely rendering Markdown files, Ashes simply wraps the processed HTML output of the text file with HTML code that attaches a simple stylesheet to decorate the text. Beyond this blank default however, Ashes can be configured to provide other valuable features, like title bars, navigation blocks, and even special colour schemes. All configurations for Ashes can be set in the main `site.yml` file.
+When generating simple sites, where you're merely rendering Markdown files, Ashes simply wraps the processed HTML output of the text file with HTML code that attaches a simple stylesheet to decorate the text. Beyond this blank default, Ashes can be configured to provide other valuable features, like title bars, navigation blocks, and even special color schemes. All configurations for Ashes can be set in the main `site.yml` file.
 
 ## Let's build a sample site
-Before delving into the configuration of Ashes, and how to build sites with foonoo in general, let's consider the following files as our content:
+Before delving into the configuration of Ashes, and how to build sites with foonoo's default site builder, let's consider the following files as the content for our test site.
 
-Here's `Introduction.md`:
+There's `Introduction.md`, an entry to the site which has the following content:
 
 ```Markdown
 ---
@@ -39,7 +39,7 @@ urna et pharetra pharetra massa massa. Nunc sed augue lacus viverra vitae congue
 Mattis aliquam faucibus purus in massa. 
 ```
 
-And here's, `Description.md`:
+and there's a `Description.md` with the following content:
 
 ```Markdown
 ---
@@ -61,18 +61,18 @@ Habitant morbi tristique senectus et. Pellentesque habitant morbi tristique sene
 libero enim sed faucibus turpis in eu mi. Justo donec enim diam vulputate ut.
 ```
 
-Assuming we keep both of these files in a directory and run the foonoo generate command:
+Assuming we keep both of these files in the same directory and run foonoo's generate command:
 
     foonoo generate
 
-The output of this command should be a `_foonoo` directory along with an `output_site` directory in the same directory. The `output_site` directory will contain the output HTML files, `Introduction.html` and `Description.html`, as well as other site assets. These two files would be styled with the Ashes theme, and they should look as shown below.
+the output should be an `output_site` directory containing the rendered site. The `output_site` directory will contain the output HTML files, `Introduction.html` and `Description.html`, as well as a `_foonoo` directory containing assets for the Ashes theme. These two files would be styled with the Ashes theme, and they should look as shown below.
 
 [[The Introduction.md file as rendered into HTML|introduction_html.png| frame="figure"]]
 [[The Description.md file as rendered into HTML|description_html.png| frame="figure"]]
 
 
 ### Adding a Title
-With the pages in place, we can tie our site together with a common title. There's no way to tie a site together better than with a common header. We would love to have this header displayed on all the generated pages. Thankfully, Ashes has a configuration for that. Assuming we're calling this site the "Pseudo Latin Placeholder", then we can create our `site.yml` file to reflect this as follows. 
+With the pages in place, we can tie our site together with a common title, and there's no way to tie a site together than with a common header. Also, for consistency, we'd love to have this header displayed on all the generated pages. Thankfully, Ashes has a configuration for that. Assuming we're calling this site the "Pseudo Latin Placeholder", we can modify our `site.yml` file to reflect this as follows. 
 
 ```yml
 type: default
