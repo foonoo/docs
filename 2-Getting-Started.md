@@ -1,8 +1,8 @@
 ---
 title: "Getting Started: A Simple Blog"
 ---
-# A simple Blog Example
-For a primer on how to use foonoo, let's work through a simple blogging example. In addition to being an introduction, this tutorial will also going to provide some useful information about the internal workings of foonoo. Consider this as a hands-on lesson in how foonoo works.
+# Getting Started: A simple Blog Example
+For a primer on how to use foonoo, let's work through building a simple blog. In addition to being an introduction, this tutorial will also going to provide some useful information about the internal workings of foonoo. Consider this as a hands-on lesson on how foonoo works.
 
 Interestingly, a blogging example is also a good start for anyone interested in working with foonoo. After all, static site generators have always been staple of the personal blogging community&mdash;and if you've read this far, you're most likely interested in blogging with foonoo.
 
@@ -13,24 +13,21 @@ The requirement of a specially formatted source directory means the first step i
 
 	foonoo create blog
 
-Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. 
+Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. These files are structured as follows.
 
-```yml
-# Default configuration 
-
-type: blog
-title: 'A foonoo blog site'
-description: 'This is a foonoo blog site.'
-# plugins:
-#   - contrib/highlight
-#   - contrib/responsive_images
+```
+ .
+├──  _foonoo
+├──  pages
+├──  posts
+└──  site.yml
 ```
 
 As its name suggests, the `_foonoo` directory is required by the foonoo core, and it's used internally by foonoo as a source for shared resources, like themes, images and custom scripts, and it also doubles as a space for foonoo to write other build specific information like caches.
 
 The `posts` and `pages` directories, on the other hand, are required by the `blog` builder. Those directories are used to hold the raw text files for individual blog posts and any additional standalone pages you may create.
 
-The `site.yml` file contains information about the blog site. This file tells foonoo what builder to use, defines which plugins to load, which assets to inject, and it essentially provides details that help foonoo determine exactly how to build a site. For this example, the `site.yml` file will contain the following:
+In foonoo, the `site.yml` file is used to store a site's configuration. This file tells foonoo what builder to use, defines which plugins to load, which assets to inject, and it essentially provides details that help foonoo determine exactly how to build a site. For this example, the `site.yml` file will contain the following:
 
 ```yml
 # Default configuration 
@@ -60,6 +57,23 @@ Generating blog site from "/home/ekow/blog/"
 - Copying images from /home/ekow/blog/_foonoo/images to /home/ekow/blog/output_site/images
 Total build time: 0.13s
 ````
+
+And your overall directory structure should look like below:
+
+```
+ .
+├──  _foonoo
+│   └──  cache
+├──  output_site
+│   ├──  assets
+│   │   └──  css
+│   │       └──  bundle-default.css
+│   ├──  index.html
+│   └──  posts.html
+├──  pages
+├──  posts
+└──  site.yml
+```
 
 At this point, you can open the `output_site` directory and manually view the `index.html` file, or you can additionally execute `foonoo serve` on the command line to start a web server on [[http://localhost:7000]], through which you could access your blog.
 
