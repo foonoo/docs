@@ -11,11 +11,13 @@ As already stated, foonoo builds sites by relying on dedicated site builders. Wh
 
 The requirement of a specially formatted source directory means the first step in creating a blog is to initialize a "source" directory with the required structure. To do this, switch to an empty directory on the terminal and execute:
 
-	foonoo create blog
+```text
+foonoo create blog
+```
 
 Once executed, this command creates a `site.yml` file, which contains the the configuration details of the site and three other directories: `_foonoo`,  `posts`, and `pages`. These files are structured as follows.
 
-```
+```text
  .
 ├──  _foonoo
 ├──  pages
@@ -45,7 +47,7 @@ With the initial directory structure in place, we can generate the HTML code for
 
 This command should create an `output_site` directory containing the HTML code for your blog site. If successful, it should produce output similar to what is below:
 
-````
+````text
 Found 1 site in "/home/ekow/blog/"
 Writing all outputs to "/home/ekow/blog/output_site/"
 
@@ -60,7 +62,7 @@ Total build time: 0.13s
 
 And your overall directory structure should look like below:
 
-```
+```text
  .
 ├──  _foonoo
 │   └──  cache
@@ -81,12 +83,12 @@ At this point, you can open the `output_site` directory and manually view the `i
 You may have noticed that your blog currently has a default foonoo title. To change this, open the generated `site.yml` file and modify the title to whatever you want. For the purposes of this tutorial, we can choose a title "My First Foonoo Blog". When it comes to changing your title, remember to keep your title text in quotes and escape any special characters in the configuration file appropriately (as per the requirements of the YAML standards).
 
 ## Writing Content
-Now that your blog is named, you can start adding content. There are two main types of content you can add to blogs: `pages` and `posts`. For blogs, you must put periodic posts in the `posts` directory, and fixed pages must be placed in the `pages` directory. In the next few sections we are going to be looking at how to create pages and posts.
+Now that your blog is named, you can start adding content. There are two main types of content you can add to blogs: `pages` and `posts`. For blogs, you must put periodic posts in the `posts` directory, and fixed pages must be placed in the `pages` directory. In the next few sections we'll look at how to create pages and posts.
 
 ### Pages
 Let's start with adding pages to out blog. Assuming we wanted to create an "About" page to tell visitors what our blog contains, we can create an `about.md` file in our `pages` directory. In this file we can put the following content:
 
-````
+````markdown
 # About this Blog
 
 Hello everyone! Welcome to our lovely little website. This is just an 
@@ -94,11 +96,13 @@ example to show how pages can be incorporated to foonoo blogs.
 
 ````
 
-After this page is added, we should have an `about.html` file generated in our `output_site` directory. Following this template, we can add any fixed page to our blog. You can use pages to store anything from lists of projects to privacy policies and resumes. 
+After this page is added, we should have an `about.html` file generated in our `output_site` directory. 
+
+You can use pages to store anything from lists of projects to privacy policies and resumes. 
 
 
 ### Posts
-For posts, we can follow the same approach used with pages, as described above. This time however, instead of the `pages` directory, we will place posts in the `posts` directory. Also, post files must have a name that conforms with the format `YYYY-MM-DD-post-id.md`. Here, `YYYY` corresponds to the year,  `MM` corresponds to the month, `DD` corresponds to the day, and the `post-id` can be a unique ID for the post (typically the title of the post, containing only underscores and hyphens).
+For posts, we can follow the same approach for pages as described in the previous section. This time however, instead of the `pages` directory, we'll use the `posts` directory. Also, post files must have a name that conforms with the format `YYYY-MM-DD-post-id.ext`. Here, `YYYY` corresponds to the year,  `MM` corresponds to the month, `DD` corresponds to the day, and the `post-id` can be a unique ID for the post (typically the title of the post, containing only underscores and hyphens). The `.ext` represents the extension of the post's content file.
 
 To illustrate this, let's create a simple welcome post for our blog. We can name this file as `2022-12-07-welcome-to-my-blog.md` and place it in the `posts` directory. The content of this file could look something as shown below:
 
@@ -115,5 +119,5 @@ learn more about how foonoo works.
 ```
 
 ## Next steps
-This short example was meant to provide a feel of how foonoo could be used. In the next sections, we will look at the specific way in which content can be written for foonoo, and we'll look deeper at the two bundled site builders in more detail.
+This short example was meant to provide a feel of how foonoo could be used. In the next sections, we'll look at the specific way in which content can be written for foonoo, and we'll look deeper at the two bundled site builders in more detail.
 
