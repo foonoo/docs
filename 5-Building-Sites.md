@@ -126,8 +126,14 @@ title: "The Latin Placeholder Site"
 index: Introduction.md
 ```
 
+<!--Apart from designating a particular page as an index or default page, you can have foonoo generate a special index page for your site. You do this by setting the `index` value in the site.yml file to `TOC`. Once this is in place, a table of contents is generated and used as the index page. -->
+
+[[block:note]]
+Unlike most of the features we have described in this section, index pages can be added to sites regardless of whether the Ashes theme is in use or not.
+[[/block:note]]
+
 ### Adding Navigation Links
-Ashes also allows for the definition of navigation links. All you have to do is provide the labels and links in your `site.yml` file, and the links will be placed on all the site headers. For our running example, if we wanted to add navigation links, our `site.yml` could look as follows:
+Ashes also allows for the definition of navigation links. To set up a navigation bar, all you have to do is provide the labels and links in your `site.yml` file. All the links will be placed on every site header. In the case of our running example, if we wanted to add navigation links, our `site.yml` could look as follows:
 
 ```yml
 type: default
@@ -141,14 +147,14 @@ menu:
     url: https://github.com/foonoo
 ```
 
-This would place two navigation links: one for the `Introduction.md` page and another to foonoo's github page. Leading to a page that looks like the following:
+This would place two navigation links: one for the `Introduction.md` page and another to foonoo's github page. Now, the final page should look like the following:
 
 [[The Introduction page showing the newly added menus|menu_sample.png|frame="figure"]]
 
 ### Adding a Table of Contents
 When building a documentation site, like this one, or some kind of site with detailed reference material, you might want to have the table of contents displayed on the side. Foonoo—through Ashes of course—makes this process a little easier. 
 
-The first step, as you may have already guessed, involves setting a value in the `site.yml` file. In this case, the value is `enable-toc` and you just have to set it to a boolean value of `True`. This will lead to the more matured `site.yml` file below:
+The first step, as you may have already guessed, involves setting a value in the `site.yml` file. In this case, the value is `enable-toc` and you just have to set it to a boolean value of `True`. This will lead to the `site.yml` file below:
 
 ```yml
 type: default
@@ -193,32 +199,40 @@ toc:
   - Introduction
   - Description
 ```
-Explicitly defining the table of contents has the added benefit of filtering out unwatned content, although specific items can also be removed from the automatically generated TOC by placing a `toc-skip: True` pair in the frontmatter.
+Explicitly defining the table of contents has the added benefit of filtering out unwatned content, although specific items can also be removed from the automatically generated TOC by placing a `toc-skip: True` value in the frontmatter.
 
 ### Setting Colors
 One final party trick Ashes holds up its sleeves is the ability to have you choose your own colors. As usual, we need to update the `site.yml` file to make this happen. This time, however, we have to explicitly tell Foonoo to use the ashes theme before we can access this configuration. As such, we need to add a `theme` section as shown below:
 
 ```yml
+type: default
+title: "The Latin Placeholder Site"
+index: Introduction.md
+
+menu:
+  - title: Introduction
+    url: Introduction.html
+  - title: Foonoo
+    url: https://github.com/foonoo
+
+enable-toc: True
+
 theme:
     name: ashes
     primary-color: "#ff0000"
     secondary-color: "#00ff00"  
 ```
 
-The theme section allows you to define the name of a theme along with any theme specific configuration values. In this case we are setting the primary and secondary color of the ashes theme. These colors are used by ashes to set a general tone and may not be explicitly used.
+The theme section allows you to provide the name of a theme along with other theme specific configuration values. In the case of this example, we are setting the primary and secondary colors of the Ashes theme. These colors are used by ashes to set a general tone and may not be explicitly used.
 
 [[Switching the ashes colors for our site's theme.|ashes_colors.png|frame="figure"]]
 
 
 
 ## Rendering Custom Data
-Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, you may want to add an easy to manage list of your projects to your personal home page, or you want to showcase your ever-growing recipe database. Regardless of your needs, Foonoo provides the infrastructure for you to inject, render, and style structured YML or JSON data for your site. 
+Although you're building static sites, sometimes you may have the need to inject some dynamic data. For example, you may want to add an easy to manage list of your projects to your personal home page, or you want to showcase your ever-growing recipe database. Regardless of your needs, Foonoo provides the possibility to inject, render, and style structured YML or JSON data for your site. 
 
-Data to be rendered must be YAML or JSON formatted files placed in the `__foonoo/data` directory. The file's name should only alpha-numeric characters (preferable lower-case) and nothing else. 
-
-[[block:note]]
-Unlike other features described in this section, rendering custom data does not require the Ashes theme. It's a feature internal to Foonoo and can always be used regardless of active theme.
-[[/block:note]]
+Data to be rendered must be YAML or JSON formatted files which must be placed in the `__foonoo/data` directory. The file's name should only contain alpha-numeric characters (preferably lower-case values, a through z or 0 through 9) and underscoresustom data does not require the Ashes theme. It's a feature internal to Foonoo and can always be used regardless of active theme.
 
 For example, if you wanted to add a list of projects to our running example site, you could start with by defining the template for rendering this data. This template must be in HTML and not Markdown (or similar structured text file). With this template in place, whenever the site is rendered, a page with the same name as the template will always be generated. 
 
@@ -233,7 +247,7 @@ In the case of this example, since you are creating a page to list projects, you
 {{/projects}}
 ````
 
-Or if you wanted to use good old PHP, you could go with the following:
+Or if you wanted to use good old PHP's templating features, you could go with the following:
 
 ````php
 <h1>Projects</h1>
