@@ -2,6 +2,8 @@
 title: Theming Sites
 ---
 # Theming Sites
+
+Themes in foonoo define the overall look of a site. Foonoo themes are made As already stated, foonoo ships with a default theme known as Ashes for styling all sites and blogs. Generally, to change the look and feel of a site, you can either tweak the current active theme by augmenting stylesheets and supplying customized templates, or your could create a comletely new theme. Tweaking themes is an easier approach, while creating a new theme from scratch offers more customizability. For the rest of this chapter, we will briefly look at both approaches to styling and theming your foonoo sites.
 1. Defining custom colors for the ashes theme.
 1. Defining templates to override sections of themes.
 	1. Mention overriding the internal parser, too.
