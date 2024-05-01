@@ -3,13 +3,20 @@ title: Theming Sites
 ---
 # Theming Sites
 
-Themes in foonoo define the overall look of a site. They work through templates that define the HTML code, stylesheets that define how the site looks, JavaScripts for interactivity, and image assets any other files web-browsers can meaningfully use. Foonoo's theming system consists an asset pipeline, which compiles assets like styles, scripts and images, and a templating system that injects content into HTML files.
+Themes define the overall look of a site. They work through templates which specify the HTML code, stylesheets which define the site's looks, JavaScripts which provide extra smarts interactivity, as well as image and other files web-browsers can meaningfully use. Essentially, the template engine allows you to consistently control every aspect of your site's appearance. 
 
-In general, there are two ways to customize the look of a foonoo site. One approach is to tweak an existing theme by augmenting its stylesheets and overriding its templates templates. The other approach, which offers better customizability, is to create new themes from scratch. For the rest of this chapter, we will briefly look at both approaches to styling and theming your foonoo sites. Before we go through these approaches, however, it will be worth taking some time to look at foonoo's asset pipeline and its templating engine.
+Foonoo's theming system consists an asset pipeline for compiling assets, like stylesheets, scripts and images, and a templating system for injecting content into HTML (and other text) files.
+
+## Defining a site's looks
+In general, there are two ways to customize the look of a foonoo site. The simplest approach is to tweak an existing theme. This can be done by augmenting its stylesheets, overriding its templates templates, or modifying other asset files like images and scripts. The other approach, which offers better customizability, is to create new themes from scratch. 
+
+For the rest of this chapter, we will briefly look at both approaches to styling and theming your foonoo sites. Before we go through these approaches, however, it will be worth taking some time to look at foonoo's asset pipeline and its templating engine.
 
 
-## Templates
-In foonoo templates define the HTML code themes generate, by supplying partial code with gaps that must be filled in. Functionality for templating in foonoo is provided by the honam template engine. By itself, honam doesn't provide any templating languages. It acts as an interface through which different temlating engines can be transparently instantiated and used. Honam is able to instantiate  provides a hierarchical template resolution system where a given hierarchy of paths is searched in its order when searching for templates to render HTML files.
+## Template Engine
+In foonoo templates define the HTML code themes generate, by supplying partial code with gaps that must be filled in. Functionality for templating in foonoo is provided through an interface that allows different templating languages to be transparently used. 
+
+By default, foonoo supports templates written in PHP, Mustache, or Smarty. 
 
 The template hierarchy for resolving any foonoo template is somewhat fixed, and it's defined as follows in decreasing order of search priority:
 
