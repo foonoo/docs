@@ -27,7 +27,7 @@ The template hierarchy for resolving any foonoo template is somewhat fixed, and 
 
 So, now that we know how to find templates, how do we override them? Well, it's quite simple: the actual templates available at any time are mainly defined by the active theme and foonoo's tag parser. To override those, you best option will be to create your own templates and place them in the `_foonoo/templates` directory.
 
-### Overriding the Layout wrapper for the default theme
+## Theming by Overriding Existing Templates
 As an example, let's override the layout of the Ashes theme. To do this, you could create a `layout.tplphp` file and place it into the `_foonoo/templates` directory. This template is required by Ashes to wrap all rendered content. A PHP variable named `$body`, which contains the rendered HTML for any content, is exposed to the layout. You can put the following code into the `layout.tplphp` file:
 
 ````php
@@ -64,8 +64,9 @@ And this should now be properly rendered as:
 
 We just overrode the layout! The default site builder has several other templates we can override. Heck, we can also define our own templates to be used within our overridden template. The possibilities for extending the look of your foonoo sites are endless.
 
+## Injecting Custom Stylesheets and Assets
 
-
+## Creating Themes from Scratch
 
 ## TODO
 
