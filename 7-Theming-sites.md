@@ -10,14 +10,14 @@ Foonoo's theming system consists an asset pipeline for compiling assets, like st
 ## Defining a site's looks
 In general, there are two ways to customize the look of a foonoo site. The simplest approach is to tweak an existing theme. This can be done by augmenting its stylesheets, overriding its templates templates, or modifying other asset files like images and scripts. The other approach, which offers better customizability, is to create new themes from scratch. 
 
-For the rest of this chapter, we will briefly look at both approaches to styling and theming your foonoo sites. Before we go through these approaches, however, it will be worth taking some time to look at foonoo's asset pipeline and its templating engine.
+For the rest of this chapter, we will briefly look at both approaches to styling and theming foonoo sites. Before we go through these approaches, however, it will be worth taking some time to look at foonoo's asset pipeline and its templating engine.
 
 
 ## Template Engine
-In foonoo templates define the HTML code themes generate, by supplying partial code with gaps that must be filled in. Functionality for templating in foonoo is provided through an interface that allows different templating languages to be transparently used. 
+In foonoo, templates define the HTML code themes generate by supplying partial code that have gaps to be filled in with information later. Templating in foonoo is achieved through an interface that allows different templating languages to be transparently used. By default, foonoo supports templates written in either pure PHP, Mustache, or Smarty. 
 
-By default, foonoo supports templates written in PHP, Mustache, or Smarty. 
-
+### Finding Templates
+A key component of the template engine is 
 The template hierarchy for resolving any foonoo template is somewhat fixed, and it's defined as follows in decreasing order of search priority:
 
 - Templates in the `_foonoo/templates` directory are searched and applied first. These templates will typically be supplied by the person building the site, and they carry the highest priority to override any other templates.
